@@ -180,20 +180,39 @@ const addEmployee = () => {
     ])
     .then(employeeData => {
         //destructure properties for employees
-        let { name, id, email, school, github, addEmployee } = employeeData;
+        let { name, id, email, school, github, confirmAddEmployee } = employeeData;
         let employee;
 
+        //conditional statements for employee roles
         if (role === 'Intern') {
             employee = new Intern(employeeData);
             console.log(employee);
+        } else if (role === 'Engineer') {
+            employee = new Engineer(employeeData);
+            console.log(employee);
         }
+        
+        //push new member to team array
+        teamArr.push(employee);
+        //conditional statement if user adds new member
+        if (confirmAddEmployee) {
+            return addEmployee(teamArr)
+        } else {
+            return teamArr;
+        }
+     })
 
-        if (role === 'Engineer') {
-            employee = new Engineer
-        }
+};
+
+
+//function to generate html based on prompts
+const writeFile = () => {
+    fs.writeFile('./dist/index.html', data, err => {
+        err ? console.error(err) : console.log('Successfully created team profile!')
     })
+};
 
-}
+
 
 
 

@@ -1,6 +1,6 @@
 const Employee = require('../lib/Employee')
 
-describe('Employee', () => {
+describe.only('Employee', () => {
     it('Creates a new Employee object'), () => {
         const employee = new Employee("Mark", 40, "Mark232@gmail.com");
         expect(employee.name).toEqual(expect.any(String));

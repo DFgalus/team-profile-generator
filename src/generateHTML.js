@@ -26,7 +26,7 @@ const generateEngineer = function (engineer) {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${manager.email}</a></p>
+                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                 <p class="github">https://github.com/${engineer.github}</p>
             </div>
         </div>
@@ -43,7 +43,7 @@ const generateIntern = function (intern) {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${intern.email}</a></p>
+                <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
                 <p class="school">School: ${intern.school}</p>
             </div>
         </div>
@@ -109,7 +109,7 @@ const generatePage = function (employeeCards) {
         <!--Team Profiles-->
         <main>
             <div class="row justify-content-center m-4" id="teamProfiles">
-                ${emmployeeCards}
+                ${employeeCards}
             </div>
     
         </main>

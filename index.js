@@ -212,6 +212,24 @@ const writeFile = () => {
     })
 };
 
+//function to initalize script
+const init = () => {
+    addManager()
+        .then(addEmployee)
+        .then(teamArr => {
+            return generateHTML(teamArr);
+        })
+        .then(newHTML => {
+            return writeFile(newHTML);
+        })
+        .catch(err => {
+            console.error(err);
+        })
+};
+
+//run function on startup
+init();
+
 
 
 

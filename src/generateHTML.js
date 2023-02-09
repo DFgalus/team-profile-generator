@@ -119,3 +119,4 @@ const generatePage = function (employeeCards) {
     `;
 }
 
+module.exports = generateHTML;

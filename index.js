@@ -52,19 +52,20 @@ const addManager = () => {
             name: 'id',
             message: `What is the manager's id?`,
             validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
+                if (isNaN(nameInput)) {
                     console.log('You must enter an id for the manager.');
                     return false;
+                } else {
+                    return true;
                 }
             }
         }, {
             type: 'input',
             name: 'email',
             message: `What is the manager's email?`,
-            validate: nameInput => {
-                if (nameInput) {
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                if (valid) {
                     return true;
                 } else {
                     console.log('You must enter an email for the manager.');
@@ -76,18 +77,18 @@ const addManager = () => {
             name: 'officeNumber',
             message: `What is the manager's office number?`,
             validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('You must enter an office number for the manager.');
+                if (isNaN(nameInput)) {
+                    console.log('You must enter an id for the manager.');
                     return false;
+                } else {
+                    return true;
                 }
             }
         }, 
     ])
     .then(managerAns => {
         //Destructure manager object 
-        const {name, id, email, officeNumber} = managerAns;
+        const { name, id, email, officeNumber} = managerAns;
         const manager = new Manager(name, id, email, officeNumber);
 
         //push new manager to the team array
@@ -108,7 +109,8 @@ const addEmployee = () => {
         {
             type: 'list',
             name: 'role',
-            choices: ['Engineer', 'Intern']
+            message: 'Choose employee role',
+            choices: ['Intern', 'Engineer']
         }, {
             type: 'input',
             name: 'name',
@@ -126,23 +128,24 @@ const addEmployee = () => {
             name: 'id',
             message: 'What is the id of your team member?',
             validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
+                if (isNaN(nameInput)) {
                     console.log('You must enter an id for the employee.');
                     return false;
+                } else {
+                    return true;
                 }
             }
         }, {
             type: 'input',
             name: 'email',
             message: 'What is the email of your team member?',
-            validate: nameInput => {
-                if (nameInput) {
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                if (valid) {
                     return true;
                 } else {
-                    console.log('You must enter an email for the employee.');
-                    return false;
+                    console.log ('Please enter an email!')
+                    return false; 
                 }
             }
         }, {
@@ -173,14 +176,14 @@ const addEmployee = () => {
             }
         }, {
             type: 'confirm',
-            name: 'AddEmployee',
+            name: 'confrimAddEmployee',
             message: 'Would you like to add more team members?',
             default: false
         }
     ])
     .then(employeeData => {
         //destructure properties for employees
-        let { name, id, email, school, role, github, confirmAddEmployee } = employeeData;
+        let { name, id, email, role, school, github, confirmAddEmployee } = employeeData;
         let employee;
 
         //conditional statements for employee roles
@@ -197,11 +200,11 @@ const addEmployee = () => {
         teamArr.push(employee);
         //conditional statement if user adds new member
         if (confirmAddEmployee) {
-            return addEmployee()
+            return addEmployee(teamArr); 
         } else {
             return teamArr;
         }
-     })
+    })
 
 };
 
@@ -214,22 +217,18 @@ const writeFile = data => {
 };
 
 //function to initalize script
-const init = () => {
-    addManager()
-        .then(addEmployee)
-        .then(teamArr => {
-            return generateHTML(teamArr);
-        })
-        .then(newHTML => {
-            return writeFile(newHTML);
-        })
-        .catch(err => {
-            console.error(err);
-        })
-};
+addManager()
+  .then(addEmployee)
+  .then(teamArr => {
+    return generateHTML(teamArr);
+  })
+  .then(newPage => {
+    return writeFile(newPage);
+  })
+  .catch(err => {
+ console.log(err);
+  });
 
-//run function on startup
-init();
 
 
 

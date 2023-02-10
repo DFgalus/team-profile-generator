@@ -176,14 +176,14 @@ const addEmployee = () => {
             }
         }, {
             type: 'confirm',
-            name: 'confrimAddEmployee',
+            name: 'confirmNewEmployee',
             message: 'Would you like to add more team members?',
             default: false
         }
     ])
     .then(employeeData => {
         //destructure properties for employees
-        let { name, id, email, role, school, github, confirmAddEmployee } = employeeData;
+        let { name, id, email, role, school, github, confirmNewEmployee } = employeeData;
         let employee;
 
         //conditional statements for employee roles
@@ -199,7 +199,7 @@ const addEmployee = () => {
         //push new member to team array
         teamArr.push(employee);
         //conditional statement if user adds new member
-        if (confirmAddEmployee) {
+        if (confirmNewEmployee) {
             return addEmployee(teamArr); 
         } else {
             return teamArr;
@@ -211,9 +211,9 @@ const addEmployee = () => {
 
 //function to generate html based on prompts
 const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
+    fs.writeFile('./dist/index.html', data, err => 
         err ? console.error(err) : console.log('Successfully created team profile!')
-    })
+    )
 };
 
 //function to initalize script

@@ -3,14 +3,14 @@
   
   # About
   
-   The purpose of this project was to use my newly learned OOP skills, and implement them into a project.  I was motivated to practice these skills because OOP can often be tricky and confusing and I wanted to solidify my grasp on the concept.
+The purpose of this project was to use my newly learned OOP skills, and implement them into a project.  I was motivated to practice these skills because OOP can often be tricky and confusing and I wanted to solidify my grasp on the concept.
   
-  # Table of Contents
-    1. [Usage](#usage)
-    2. [Installation](#installation)
-    3. [Tests](#tests)
-    4. [Questions](#questions)
-    5. [License](#license)
+# Table of Contents
+1. [Usage](#usage)
+2. [Installation](#installation)
+3. [Tests](#tests)
+4. [Questions](#questions)
+5. [License](#license)
   
   # Usage
   

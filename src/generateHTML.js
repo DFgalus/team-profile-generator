@@ -1,7 +1,7 @@
 //generate manager profile
 const generateManager = function (manager) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-4 mt-4 shadow-sm bg-body-tertiary">
         <div class="card h-100">
             <div class="card-header bg-dark text-white">
                 <h3>${manager.name}</h3>
@@ -18,7 +18,7 @@ const generateManager = function (manager) {
 
 const generateEngineer = function (engineer) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-4 mt-4 shadow-sm bg-body-tertiary">
         <div class="card h-100">
             <div class="card-header bg-dark text-white">
                 <h3>${engineer.name}</h3>
@@ -35,7 +35,7 @@ const generateEngineer = function (engineer) {
 
 const generateIntern = function (intern) {
     return `
-    <div class="col-4 mt-4">
+    <div class="col-4 mt-4 shadow-sm bg-body-tertiary">
         <div class="card h-100">
             <div class="card-header bg-dark text-white">
                 <h3>${intern.name}</h3>
@@ -103,7 +103,7 @@ const generatePage = function (employeeCards) {
     <body>
         <header>
             <div class="mt-0 py-5 text-center bg-dark text-white">
-                <h1>Team Profile</h1>
+                <h1>My Team</h1>
             </div>
         </header>
         <!--Team Profiles-->

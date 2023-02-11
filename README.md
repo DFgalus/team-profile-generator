@@ -18,7 +18,7 @@ Run `node index.js` in your terminal to begin building your team! View walk thro
 
 # Questions
   
-Feel free to reach me with any further questions, my GitHub is: [DFgalus](https//:github.com/DFgalus) and my email is: [damiangalus7@gmail.com](mailto:damiangalus7@gmail.com)
+Feel free to reach me with any further questions, my GitHub is: [DFgalus](https//:github.com/DFgalus), and my email is: [damiangalus7@gmail.com](mailto:damiangalus7@gmail.com)
 
 # Installation
   

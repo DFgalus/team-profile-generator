@@ -2,7 +2,7 @@
    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
 # About
- The purpose of this project was to use my newly learned OOP skills, and implement them into a project.  I was motivated to practice these skills because OOP can often be tricky and confusing and I wanted to solidify my grasp on the concept.
+ The purpose of this project was to use my newly learned OOP skills, and implement them into a project.  I was motivated to practice these skills because OOP can often be tricky and confusing and I wanted to solidify my grasp on the concept. A sample index.html is include in the /dist directory.
   
  # Table of Contents
  1. [Usage](#usage)
@@ -13,7 +13,7 @@
   
 # Usage
   
-Run `node index.js` in your terminal to begin building your team! View walk through video here - [Screencastify](https://drive.google.com/file/d/1Hh8OvUXWSWGVNEL3rfPoM_zlng1hejew/view)<br>
+Run `node index.js` in your terminal to begin building your team! View walk through video here - [Link](https://drive.google.com/file/d/1exBRXf7wadn5KloCVkN3BiCQglljK5J0/view)<br>
 ![alt text](./assets/images/ezgif.com-video-to-gif.gif)
 
 # Questions
@@ -22,7 +22,7 @@ Feel free to reach me with any further questions, my GitHub is: [DFgalus](https/
 
 # Installation
   
-Clone my code from the repository on my GitHub: https//:github.com/DFgalus.  A file system and inquirer module are also required for this application. Run `npm i` in the root, to install all dependencies.  
+Clone my code from the repository on my GitHub: [DFgalus](https//:github.com/DFgalus).  A file system and inquirer module are also required for this application. Run `npm i` in terminal of the root, to install all dependencies.  
   
 # Tests
 Run `npm run test` to run all tests on contructors.
